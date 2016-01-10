@@ -267,8 +267,6 @@ with(y, plot(interval, `mean(steps)`,
 <pre><code class="r">z &lt;- length(subset(raw, is.na(raw$steps))$interval)
 </code></pre>
 
-<p>The number of rows with missing values are 2304.</p>
-
 <p>To fill in the missing values, the presumption is made that no steps have been taken. For that reason the values of steps during that interval should be zero.</p>
 
 <p>A new dataset will be created based on this presumption and this dataset will hold the name &ldquo;a&rdquo;.</p>

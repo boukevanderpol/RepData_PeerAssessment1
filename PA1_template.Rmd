@@ -52,8 +52,6 @@ summary(raw)
 z <- length(subset(raw, is.na(raw$steps))$interval)
 ```
 
-The number of rows with missing values are `r z`.
-
 To fill in the missing values, the presumption is made that no steps have been taken. For that reason the values of steps during that interval should be zero.
 
 A new dataset will be created based on this presumption and this dataset will hold the name "a".
