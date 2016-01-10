@@ -264,7 +264,10 @@ with(y, plot(interval, `mean(steps)`,
 ##  NA&#39;s   :2304     (Other)   :15840
 </code></pre>
 
-<pre><code class="r">z &lt;- length(subset(raw, is.na(raw$steps))$interval)
+<pre><code class="r">length(subset(raw, is.na(raw$steps))$interval)
+</code></pre>
+
+<pre><code>## [1] 2304
 </code></pre>
 
 <p>To fill in the missing values, the presumption is made that no steps have been taken. For that reason the values of steps during that interval should be zero.</p>
@@ -284,7 +287,7 @@ a &lt;- for(i in seq_along(a$interval)) {
 }
 </code></pre>
 
-<p>The meean and median of the dataset without NA values is calculated below.</p>
+<p>The mean and median of the dataset without NA values is calculated below.</p>
 
 <pre><code class="r">c &lt;- b %&gt;% group_by(date) %&gt;% summarize(sum(steps))
 
@@ -307,7 +310,7 @@ hist(c$`sum(steps)`,
 <pre><code>## [1] 10395
 </code></pre>
 
-<p>The mean and median are lower than computed ealrier in this assigment. This is a logical consequence of the adjustment of the NA values in zero-values.</p>
+<p>The mean and median are lower than computed earlier in this assigment. This is a logical consequence of the adjustment of the NA values in zero-values.</p>
 
 <h2>Are there differences in activity patterns between weekdays and weekends?</h2>
 

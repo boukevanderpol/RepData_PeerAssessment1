@@ -82,7 +82,11 @@ summary(raw)
 ```
 
 ```r
-z <- length(subset(raw, is.na(raw$steps))$interval)
+length(subset(raw, is.na(raw$steps))$interval)
+```
+
+```
+## [1] 2304
 ```
 
 To fill in the missing values, the presumption is made that no steps have been taken. For that reason the values of steps during that interval should be zero.
@@ -104,7 +108,7 @@ a <- for(i in seq_along(a$interval)) {
 }
 ```
 
-The meean and median of the dataset without NA values is calculated below.
+The mean and median of the dataset without NA values is calculated below.
 
 ```r
 c <- b %>% group_by(date) %>% summarize(sum(steps))
@@ -132,7 +136,7 @@ median(c$`sum(steps)`)
 ## [1] 10395
 ```
 
-The mean and median are lower than computed ealrier in this assigment. This is a logical consequence of the adjustment of the NA values in zero-values.
+The mean and median are lower than computed earlier in this assigment. This is a logical consequence of the adjustment of the NA values in zero-values.
 
 ## Are there differences in activity patterns between weekdays and weekends?
 
